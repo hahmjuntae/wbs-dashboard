@@ -166,7 +166,7 @@ export default function GanttTimeline({ tasks, totalCount, filteredCount }: Prop
     if (scrollRef.current && todayColIdx >= 0 && labelW > 0) {
       const visibleWidth = scrollRef.current.clientWidth - labelW;
       const scrollTarget =
-        labelW + todayColIdx * COL_W - visibleWidth / 2;
+        todayColIdx * COL_W + COL_W / 2 - visibleWidth / 2;
       scrollRef.current.scrollTo({ left: Math.max(0, scrollTarget), behavior: "smooth" });
     }
   }, [todayColIdx, labelW, COL_W]);
@@ -176,7 +176,7 @@ export default function GanttTimeline({ tasks, totalCount, filteredCount }: Prop
     if (scrollRef.current && todayColIdx >= 0 && labelW > 0) {
       const visibleWidth = scrollRef.current.clientWidth - labelW;
       const scrollTarget =
-        labelW + todayColIdx * COL_W - visibleWidth / 2;
+        todayColIdx * COL_W + COL_W / 2 - visibleWidth / 2;
       scrollRef.current.scrollLeft = Math.max(0, scrollTarget);
     }
   }, [todayColIdx, tasksWithDates.length, labelW]);
