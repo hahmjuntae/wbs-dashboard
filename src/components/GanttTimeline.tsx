@@ -164,8 +164,9 @@ export default function GanttTimeline({ tasks, totalCount, filteredCount }: Prop
 
   const scrollToToday = useCallback(() => {
     if (scrollRef.current && todayColIdx >= 0 && labelW > 0) {
+      const visibleWidth = scrollRef.current.clientWidth - labelW;
       const scrollTarget =
-        labelW + todayColIdx * COL_W - scrollRef.current.clientWidth / 2;
+        labelW + todayColIdx * COL_W - visibleWidth / 2;
       scrollRef.current.scrollTo({ left: Math.max(0, scrollTarget), behavior: "smooth" });
     }
   }, [todayColIdx, labelW, COL_W]);
@@ -173,8 +174,9 @@ export default function GanttTimeline({ tasks, totalCount, filteredCount }: Prop
   // Auto-scroll to today on mount
   useEffect(() => {
     if (scrollRef.current && todayColIdx >= 0 && labelW > 0) {
+      const visibleWidth = scrollRef.current.clientWidth - labelW;
       const scrollTarget =
-        labelW + todayColIdx * COL_W - scrollRef.current.clientWidth / 2;
+        labelW + todayColIdx * COL_W - visibleWidth / 2;
       scrollRef.current.scrollLeft = Math.max(0, scrollTarget);
     }
   }, [todayColIdx, tasksWithDates.length, labelW]);
@@ -295,7 +297,7 @@ export default function GanttTimeline({ tasks, totalCount, filteredCount }: Prop
                     key={i}
                     className={`text-center font-medium leading-9 ${
                       i === todayColIdx
-                        ? "bg-destructive/15 font-bold text-destructive"
+                        ? "bg-destructive/25 font-bold text-destructive"
                         : "text-muted-foreground"
                     } border-r border-border/30`}
                     style={{ width: COL_W, height: 36 }}
@@ -342,7 +344,7 @@ export default function GanttTimeline({ tasks, totalCount, filteredCount }: Prop
                     return (
                       <div
                         key={ci}
-                        className={`relative h-full border-r border-border/30 ${isTodayCol ? "bg-destructive/5" : ""}`}
+                        className={`relative h-full border-r border-border/30 ${isTodayCol ? "bg-destructive/10" : ""}`}
                         style={{ width: COL_W }}
                       >
                         {inRange && (
