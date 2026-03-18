@@ -15,7 +15,7 @@ interface Props {
 
 export default function FilterBar({ tasks, filters, onChange }: Props) {
   const [searchLocal, setSearchLocal] = useState(filters.search);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
     setSearchLocal(filters.search);
