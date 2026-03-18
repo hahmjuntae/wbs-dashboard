@@ -251,7 +251,7 @@ export default function Home() {
         <StatsCards tasks={filtered} onFilter={handleStatsFilter} activeStatus={filters.status} />
 
         {/* Filters + View toggle */}
-        <div className="sticky top-0 z-30 -mx-6 bg-background/95 px-6 py-3 backdrop-blur-sm">
+        <div className="sticky top-0 z-50 -mx-6 bg-background/95 px-6 py-3 backdrop-blur-sm">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <FilterBar
               tasks={allTasks}
