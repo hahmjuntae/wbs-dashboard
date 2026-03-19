@@ -36,3 +36,10 @@ Thumbs.db
 *.tsbuildinfo
 next-env.d.ts
 *.bak
+.vercel
+
+
+# Agent
+.claude/
+.claude
+CLAUDE.md
