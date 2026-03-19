@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "WBS Dashboard",
   description: "WBS 일정 대시보드",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

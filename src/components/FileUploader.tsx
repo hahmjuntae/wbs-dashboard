@@ -62,6 +62,7 @@ export default function FileUploader({ onFileLoad }: Props) {
         className="hidden"
       />
       <Button
+        className="cursor-pointer"
         onClick={(e) => {
           e.stopPropagation();
           openFilePicker();

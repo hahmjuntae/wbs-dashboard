@@ -21,7 +21,6 @@ import CalendarView from "@/components/CalendarView";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  FileSpreadsheet,
   RotateCcw,
   Download,
   Moon,
@@ -193,7 +192,8 @@ export default function Home() {
             {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
         </div>
-        <FileSpreadsheet className="mb-4 h-16 w-16 text-muted-foreground/50" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/forbiz-logo.svg" alt="FORBIZ KOREA" className="mb-4 h-20 dark:invert" />
         <h1 className="mb-1 text-2xl font-bold tracking-tight">
           WBS Dashboard
         </h1>
@@ -251,7 +251,7 @@ export default function Home() {
         <StatsCards tasks={filtered} onFilter={handleStatsFilter} activeStatus={filters.status} />
 
         {/* Filters + View toggle */}
-        <div className="sticky top-0 z-50 -mx-6 bg-background/95 px-6 py-3 backdrop-blur-sm">
+        <div className="sticky top-0 z-[60] -mx-6 bg-background/95 px-6 py-3 backdrop-blur-sm">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <FilterBar
               tasks={allTasks}
